@@ -28,6 +28,8 @@ public class Controller {
         Products honey = new Products();//deklarasi variabel
         honey.setId("1");//mengset id honey
         honey.setName("Honey");//mengset nama honey
+        honey.setNumber(3);
+        honey.setPrice(1000);
         productRepo.put(honey.getId(),honey);//mengisi nilai ke product repo
         
         Products almond = new Products();//deklarasi variabel
@@ -48,6 +50,8 @@ public class Controller {
     //POST API
     @RequestMapping(value = "/products", method = RequestMethod.POST)//merequestmapping
     public ResponseEntity<Object> createproduct(@RequestBody Products product){//mendeklarasi variabel dan menangkap nilai dari product
+        
+        
         if (productRepo.containsKey(product.getId())){//kondisi jika id sudah ada
             return new ResponseEntity<>("Product already exist", HttpStatus.NOT_FOUND);//mengembalikan nilai
         }else{

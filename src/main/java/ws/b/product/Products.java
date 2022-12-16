@@ -12,6 +12,9 @@ package ws.b.product;
 public class Products {
     private String id;
     private String name;
+    private int price;
+    private int number;
+    private int total;
 
     public String getId() {
         return id;
@@ -29,5 +32,27 @@ public class Products {
         this.name = name;
     }
     
+    public int getPrice(){
+        return price;
+    }
     
+    public void setPrice(int price){
+        this.price = price;
+    }
+    
+    public int getNumber(){
+        return number;
+    }
+    
+    public void setNumber (int number){
+        this.number = number;
+    }
+    
+    public int getTotal(){
+        return total = price*number;
+    }
+    
+    public void setTotal (int total){
+        this.total = total;
+    }
 }
